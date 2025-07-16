@@ -28,8 +28,12 @@ class DatabaseSeeder extends Seeder
             'Password' => bcrypt('Akbar'),
         ]);
 
-        //Buku::factory()->count(20)->create();
-        //Anggota::factory()->count(20)->create();
-        //Petugas::factory()->count(3)->create();
+        Buku::factory()->count(20)->create();
+        Anggota::factory()->count(20)->create();
+        Petugas::factory()->count(3)->create();
+
+        $this->call([
+            PetugasSeeder::class,
+        ]);
     }
 }
