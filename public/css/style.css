@@ -1,0 +1,89 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  padding: 30px;
+}
+
+.form-container {
+  max-width: 850px;
+  margin: auto;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  padding-bottom: 20px;
+}
+
+.form-header {
+  background: #ccc;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.btn-close {
+  background: red;
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding: 4px 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.form-library {
+  text-align: center;
+  border: 1px solid black;
+  margin: 20px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.form-content {
+  padding: 0 40px;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  row-gap: 14px;
+  column-gap: 20px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.form-group label {
+  font-size: 16px;
+}
+
+.form-group input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #000;
+  width: 100%;
+}
+
+.form-group input.long {
+  grid-column: span 1;
+}
+
+.form-buttons {
+  text-align: center;
+}
+
+.form-buttons button {
+  background: #ddd;
+  border: none;
+  padding: 10px 18px;
+  margin: 0 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-buttons button:hover {
+  background: #bbb;
+}
