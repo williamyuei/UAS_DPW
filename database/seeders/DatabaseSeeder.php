@@ -2,13 +2,14 @@
 
 namespace Database\Seeders;
 
-use App\Models\Anggota;
 use App\Models\Buku;
-use App\Models\Petugas;
 use App\Models\User;
+use App\Models\Anggota;
+use App\Models\Petugas;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use Illuminate\Support\Facades\Hash;
 use function Symfony\Component\String\b;
 
 class DatabaseSeeder extends Seeder
@@ -20,12 +21,12 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        Petugas::factory()->create([
-            'KodePetugas' => 'Akbar',
-            'Nama' => 'Akbar',
-            'Jabatan' => 'COE',
+        Petugas::create([
+            'KodePetugas' => 'PTG-102',
+            'Nama' => 'Petugas Test',
+            'Jabatan' => 'Staf Admin',
             'HakAkses' => 'Admin',
-            'Password' => bcrypt('Akbar'),
+            'password' => Hash::make('password123'), // password: password123
         ]);
 
         Buku::factory()->count(20)->create();

@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Petugas;
 use Illuminate\Support\Facades\Hash;
 
-class PetugasTestSeeder extends Seeder
+class PetugasSeeder extends Seeder
 {
     public function run(): void
     {
