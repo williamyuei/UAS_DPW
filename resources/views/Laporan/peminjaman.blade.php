@@ -13,23 +13,45 @@
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
+                <th>NoPinjam</th>
+                <th>Tanggal Pinjam</th>
                 <th>Kode Anggota</th>
-                <th>Nama</th>
-                <th>Alamat</th>
-                <th>NoTelepon</th>
-                <th>Email</th>
+                <th>Nama Anggota</th>
+                <th>Tanggal Kembali</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
+        @if(count($peminjaman) > 0)
             @foreach ($peminjaman as $p)
                 <tr>
-                    <td>{{ $p->anggota->KodeAnggota ?? '-' }}</td>
-                    <td>{{ $p->anggota->Nama ?? '-' }}</td>
-                    <td>{{ $p->anggota->Alamat ?? '-' }}</td>
-                    <td>{{ $p->anggota->NoTelp ?? '-' }}</td>
-                    <td>{{ $p->anggota->Email ?? '-' }}</td>
+                    <td>{{ $p->NoPinjam }}</td>
+                    <td>{{ date('d-m-Y', strtotime($p->TglPinjam)) }}</td>
+                    <td>{{ $p->KodeAnggota }}</td>
+                    <td>{{ $p->anggota->Nama ?? 'Tidak ditemukan' }}</td>
+                    <t6/d>{{ date('d-m-Y', strtotime($p->TglKembali)) }}</td>
+                    <td>
+                        @if($p->Status == 'Dipinjam')
+                            <span style="color: #e74c3c; font-weight: bold;">
+                                <i class="fas fa-book me-1"></i> {{ $p->Status }}
+                            </span>
+                        @elseif($p->Status == 'Dikembalikan')
+                            <span style="color: #27ae60; font-weight: bold;">
+                                <i class="fas fa-check-circle me-1"></i> {{ $p->Status }}
+                            </span>
+                        @else
+                            {{ $p->Status }}
+                        @endif
+                    </td>
                 </tr>
             @endforeach
+        @else
+            <tr>
+                <td colspan="6" class="text-center" style="padding: 30px; color: #7f8c8d;">
+                    <i class="fas fa-info-circle me-2"></i> Tidak ada data peminjaman yang tersedia
+                </td>
+            </tr>
+        @endif
         </tbody>
         {{ $peminjaman->links('pagination::bootstrap-5') }}
     </table>
