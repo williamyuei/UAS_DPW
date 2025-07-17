@@ -13,11 +13,12 @@
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
-            <th>Kode Anggota</th>
-            <th>Nama</th>
-            <th>Alamat</th>
-            <th>NoTelepon</th>
-            <th>Email</th>
+            <th>Kode Buku</th>
+            <th>Judul</th>
+            <th>Pengarang</th>
+            <th>Penerbit</th>
+            <th>Kondisi</th>
+            <th>Jumlah</th>
         </tr>
     </thead>
     @foreach ($buku as $b)
