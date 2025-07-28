@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    @vite('resources/css/app.css')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
